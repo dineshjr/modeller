@@ -117,36 +117,36 @@ const Modeller = () => {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // Create a new modeler instance with additional configuration
+   
     const bpmnModeler = new BpmnModeler({
       container: containerRef.current,
       additionalModules: [],
       propertiesPanel: {
         parent: '.properties-container'
       },
-      disableBpmnJsLogo: true  // Set this to true to remove the watermark
+      disableBpmnJsLogo: true  
     });
 
 
     const setupModeler = async () => {
       try {
-        // Import the diagram
+        
         const result = await bpmnModeler.importXML(initialDiagram);
 
         if (result.warnings.length) {
           console.warn('Warnings while importing BPMN diagram:', result.warnings);
         }
 
-        // Get the canvas only after the diagram is imported successfully
+       
         const canvas = bpmnModeler.get('canvas');
         if (!canvas) {
           throw new Error('Canvas not found');
         }
 
-        // Zoom to fit the viewport
+      
         canvas.zoom('fit-viewport');
 
-        // Set up event listeners
+      
         bpmnModeler.on('selection.changed', ({ newSelection }) => {
           setSelectedElement(newSelection[0] || null);
         });
@@ -194,7 +194,7 @@ const Modeller = () => {
     try {
       const { xml } = await modeler.saveXML({ format: true });
       console.log(xml);
-      // Here you would typically send the XML to your backend
+     
     } catch (error) {
       console.error('Error saving diagram:', error);
     }
