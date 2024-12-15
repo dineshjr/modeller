@@ -1,0 +1,85 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.toolbar {
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.toolbar button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.toolbar button:hover {
+  background-color: #0056b3;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.modeler-container {
+  flex: 2;
+  border-right: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.properties-container {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+}
+
+.properties-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.property-group {
+  background-color: white;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.property-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.property-row label {
+  margin-right: 10px;
+  flex-shrink: 0;
+  width: 100px;
+}
+
+.property-row input {
+  flex-grow: 1;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.properties-placeholder {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  margin-top: 50px;
+}
